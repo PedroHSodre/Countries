@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/navbar/index';
+import GlobalStyle from './styles/global';
+import { ThemeProvider } from 'styled-components';
+import light from './styles/Themes/light';
+import dark from './styles/Themes/dark';
+import AllContries from './components/allCountries';
+import CountryDetail from './components/countryDetail';
 
 function App() {
+  const [theme, setTheme] = useState(dark);
+  const [countryDetail, setCountryDetail] = useState({});
+
+  const keys = Object.keys(countryDetail);
+
+  const handleChangeLight = () => theme === dark ? setTheme(light) : setTheme(dark);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div className="App">
+        <Navbar handleChangeLight={handleChangeLight}/>
+        {
+          keys.length === 0 ? (
+            <AllContries setCountryDetail={setCountryDetail}/>
+          ) : (
+            <CountryDetail />
+          )
+        }
+      </div>
+    </ThemeProvider>
   );
 }
 
