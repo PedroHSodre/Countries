@@ -11,3 +11,9 @@ export const Header = styled.header`
     padding: 30px;
 `;
 
+export const Grid = styled.div`
+    display: grid;
+    grid-gap: 35px;
+    margin-top: 50px;
+    grid-template-columns: repeat(4, 1fr);
+`
