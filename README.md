@@ -1,6 +1,7 @@
 # Projeto : Countries
 
-## ReactJS
+##
+  <img align="center" alt="Pedro-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"> ReactJS
 ## Axios
 ## Styled-Components
 ## Dark/Light theme
