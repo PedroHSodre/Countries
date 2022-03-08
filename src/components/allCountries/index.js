@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CountryView from "../countryView";
+import Filter from "../filter";
 import SearchBar from "../searchBar";
-import { Container, Header, Grid } from './styles';
+import { Container, Header, Grid, Pressable } from './styles';
 
 async function getCountries(){
     let data;
@@ -15,22 +16,28 @@ async function getCountries(){
 
 const AllContries = ({setCountryDetail}) => {
     const [countries, setCountries] = useState([]);
-
+    const [filter, setFilter] = useState('');
+    
+    const filtered = countries.filter(country => country.name.includes(filter) || country.region.includes(filter))
     useEffect(() => {
         getCountries().then(res => setCountries(res));
     }, []);
     return (
         <Container>
             <Header>
-                <SearchBar />
-                <div>
-                    Filtro    
-                </div>
+                <SearchBar setFilter={setFilter} />
+                <Filter setFilter={setFilter} />
             </Header>
             <Grid>
                 {
-                    countries.map(country => (
-                        <CountryView country={country} />
+                    filtered ? filtered.map((country, index) => (
+                        <Pressable key={index} onClick={() => setCountryDetail(country)}>
+                            <CountryView  country={country}/>
+                        </Pressable>
+                    )) : countries.map((country, index) => (
+                        <Pressable key={index} onClick={() => setCountryDetail(country)}>
+                            <CountryView  country={country} />
+                        </Pressable>
                     ))
                 }
             </Grid>
