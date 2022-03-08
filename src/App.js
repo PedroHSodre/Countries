@@ -14,7 +14,6 @@ function App() {
   const keys = Object.keys(countryDetail);
 
   const handleChangeLight = () => theme === dark ? setTheme(light) : setTheme(dark);
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -24,7 +23,7 @@ function App() {
           keys.length === 0 ? (
             <AllContries setCountryDetail={setCountryDetail}/>
           ) : (
-            <CountryDetail />
+            <CountryDetail setCountryDetail={setCountryDetail} country={countryDetail} />
           )
         }
       </div>
