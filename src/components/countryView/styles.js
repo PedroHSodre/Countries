@@ -12,3 +12,11 @@ export const Image = styled.img`
 export const Description = styled.div`
     padding: 15px;
 `
+
+export const Item = styled.div`
+    margin-top: 10px;
+
+    span {
+        color: ${props => props.theme.colors.text};
+    }
+`
