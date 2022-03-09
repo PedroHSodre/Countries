@@ -1,12 +1,11 @@
 # Projeto : Countries
 
-##
   <img align="center" alt="Pedro-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"> ReactJS
-## Axios
-## Styled-Components
-## Dark/Light theme
+Axios - 
+Styled-Components - 
+Dark/Light theme
 
-Site feito utilizando ReactJS, utilizando styled-components para organizar melhor a estilização do site. Utilizando "Axios" para consumir a API de paises.
+Site feito com ReactJS, utilizando styled-components para organizar melhor a estilização do site e me ajudar na hora de fazer . Utilizando "Axios" para consumir a API de paises.
 
 ## Design da pagina é de um desafio da pagina Front-End Menthor.
 
