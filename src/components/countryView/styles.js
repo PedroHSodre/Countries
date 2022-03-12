@@ -14,9 +14,14 @@ export const Description = styled.div`
 `
 
 export const Item = styled.div`
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 10px;
-
     span {
         color: ${props => props.theme.colors.text};
     }
+`
+
+export const Subtitle = styled.div`
+    font-weight: ${props => props.theme.fonts.subtitle.fontWeight};
 `

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Image, Description, Item } from "./styles";
+import { Container, Image, Description, Item, Subtitle } from "./styles";
 
 const CountryView = ({country}) => {
     return (
@@ -7,18 +7,18 @@ const CountryView = ({country}) => {
             <Image src={country.flags.png} alt="country flag" height={170} />
             
             <Description>
-                <span style={{fontWeight: "bold"}}>
+                <span style={{fontWeight: 700}}>
                     {country.name}
                 </span>
                 <div style={{marginBottom: 20}}/>
                 <Item>
-                    Popularion: <span>{country.population}</span>
+                    <Subtitle>Population : </Subtitle> <span>{country.population}</span>
                 </Item>
                 <Item>
-                    Region: {country.region}
+                    <Subtitle>Region : </Subtitle> <span>{country.region}</span>
                 </Item>
                 <Item>
-                    Captal: {country.capital}
+                    <Subtitle>Captal : </Subtitle> <span>{country.capital}</span>
                 </Item>
             </Description>
         </Container>

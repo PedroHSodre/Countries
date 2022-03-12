@@ -8,6 +8,7 @@ const Filter = styled.input`
     outline: none;
     padding: 15px 20px;
     width: 300px;
+    font-weight: ${props => props.theme.fonts.normal.fontWeight};
 
     &:focus{
         outline: none;

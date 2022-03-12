@@ -1,10 +1,10 @@
 import React from "react";
-import {} from './styles.js';
+import { Container} from './styles.js';
 const Title = ({children}) => {
     return (
-        <div className="title">
+        <Container className="title">
             {children}
-        </div>
+        </Container>
     );
 };
 

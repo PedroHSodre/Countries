@@ -11,7 +11,8 @@ export const Select = styled.select`
     width: 170px;
     border: none;
     outline: none;
-
+    font-weight: ${props => props.theme.fonts.subtitle.fontWeight};
+    
     @media(max-width: 450px){
         width: 125px;
     }

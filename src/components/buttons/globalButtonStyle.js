@@ -8,6 +8,8 @@ export const Button = styled.button`
     color: ${props => props.theme.colors.text};
     border: none;
     cursor: pointer;
+        font-weight: ${props => props.theme.fonts.title.fontWeight};
+        text-transform: uppercase;
 
     &:hover {
         border: solid 1px white;

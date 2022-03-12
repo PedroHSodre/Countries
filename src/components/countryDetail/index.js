@@ -9,10 +9,10 @@ const CountryDetail = ({setCountryDetail, country}) => {
                 <BackButton setCountryDetail={setCountryDetail} />
             </div>
             <Detail>
-                <div>
+                <div style={{ width: '100%', maxWidth: '500px', minWidth: 250}}>
                     <Image src={country.flags.png} alt="country flag" />
                 </div>
-                <div>
+                <div style={{width: '100%'}}>
                     <Description>
                         <h2>{country.name}</h2>
                         <Content>

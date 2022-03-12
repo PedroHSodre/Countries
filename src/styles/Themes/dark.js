@@ -6,5 +6,15 @@ export default {
         background: 'hsl(207, 26%, 17%)',
         text: 'hsl(0, 0%, 100%)',
     },
-    fonts: {}
+    fonts: {
+        title: {
+            fontWeight: 700
+        },
+        subtitle: {
+            fontWeight: 600
+        },
+        normal: {
+            fontWeight: 300
+        }
+    }
 }
