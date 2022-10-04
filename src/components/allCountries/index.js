@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useCountries } from "../../hooks/countries";
 import CountryView from "../countryView";
 import Filter from "../filter";
 import SearchBar from "../searchBar";
@@ -15,13 +16,11 @@ async function getCountries(){
 }
 
 const AllContries = ({setCountryDetail}) => {
-    const [countries, setCountries] = useState([]);
     const [filter, setFilter] = useState('');
-    
-    const filtered = countries.filter(country => country.name.includes(filter) || country.region.includes(filter))
-    useEffect(() => {
-        getCountries().then(res => setCountries(res));
-    }, []);
+    const { countriesList } = useCountries();
+  
+    const filtered = countriesList.filter(country => country.name.includes(filter) || country.region.includes(filter))
+ 
     return (
         <Container>
             <Header>
@@ -34,7 +33,7 @@ const AllContries = ({setCountryDetail}) => {
                         <Pressable key={index} onClick={() => setCountryDetail(country)}>
                             <CountryView  country={country}/>
                         </Pressable>
-                    )) : countries.map((country, index) => (
+                    )) : countriesList.map((country, index) => (
                         <Pressable key={index} onClick={() => setCountryDetail(country)}>
                             <CountryView  country={country} />
                         </Pressable>

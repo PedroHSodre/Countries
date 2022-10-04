@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`    
     box-sizing: border-box;
     background-color: ${props => props.theme.colors.elements};
+
+    &:hover {
+        opacity: .4;
+    }
 `
 
 export const Image = styled.img`
