@@ -1,5 +1,8 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { useCountries } from "../hooks/countries";
 
 const Filter = styled.input`
     background-color: ${props => props.theme.colors.elements};
@@ -23,11 +26,21 @@ const Filter = styled.input`
     }
 `
 
-const SearchBar = ({setFilter}) => {
+const SearchBar = () => {
+    const [filter, setFilter] = useState('');
+
+    const { filterCountries } = useCountries();
+
+
+    useEffect(() => {
+        filterCountries(filter);
+    }, [filter]);
+    
     return (
         <>
             <Filter 
                 placeholder="Search country" 
+                value={filter}
                 onChange={(e) => setFilter(e.target.value)} 
             />
         </>

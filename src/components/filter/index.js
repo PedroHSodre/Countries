@@ -1,12 +1,22 @@
 import React from "react";
 import { Container, Select } from './styles';
+import { useState } from "react";
+import { useCountries } from "../../hooks/countries";
+import { useEffect } from "react";
 
-const Filter = ({setFilter}) => {
+const Filter = () => {
+    const [filter, setFilter] = useState('');
+    
+    const { filterCountries } = useCountries();
+    
+    useEffect(() => {
+        filterCountries(filter)
+    }, [filter]);
 
     return (
         <Container>
             <Select onChange={(e) => setFilter(e.target.value)}>
-                <option selected disabled>Filter by Region</option>
+                <option selected disabled>Filtrar por continente</option>
                 <option>Africa</option>
                 <option>America</option>
                 <option>Asia</option>

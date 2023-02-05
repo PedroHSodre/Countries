@@ -1,5 +1,5 @@
 import React from "react";
-import BackButton from "../buttons/backButton";
+import BackButton from "../../components/buttons/backButton";
 import { Container, Detail, Image, Description, Text, Content } from "./styles";
 import tt from "@tomtom-international/web-sdk-maps";
 

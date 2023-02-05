@@ -1,13 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import AllContries from "../components/allCountries";
-import CountryDetail from "../components/countryDetail";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CountryDetail from "../pages/CountryDetail";
+import AllCountries from "../pages/AllCountries";
 
 export default function MainRoute() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AllContries />} />
+        <Route path="/" element={<AllCountries />} />
         <Route path="/country/:id" element={<CountryDetail />} />
       </Routes>
     </Router>

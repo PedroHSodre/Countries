@@ -12,13 +12,13 @@ const CountryView = ({country}) => {
                 </span>
                 <div style={{marginBottom: 20}}/>
                 <Item>
-                    <Subtitle>Population : </Subtitle> <span>{country.population}</span>
+                    <Subtitle>População: </Subtitle> <span>{country.population}</span>
                 </Item>
                 <Item>
-                    <Subtitle>Region : </Subtitle> <span>{country.region}</span>
+                    <Subtitle>Region: </Subtitle> <span>{country.region}</span>
                 </Item>
                 <Item>
-                    <Subtitle>Captal : </Subtitle> <span>{country.capital}</span>
+                    <Subtitle>Captal: </Subtitle> <span>{country.capital}</span>
                 </Item>
             </Description>
         </Container>

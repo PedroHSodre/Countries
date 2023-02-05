@@ -4,8 +4,6 @@ import GlobalStyle from "./styles/global";
 import { ThemeProvider } from "styled-components";
 import light from "./styles/Themes/light";
 import dark from "./styles/Themes/dark";
-import AllContries from "./components/allCountries";
-import CountryDetail from "./components/countryDetail";
 import { CountriesProvider, useCountries } from "./hooks/countries";
 import MainRoute from "./routes";
 

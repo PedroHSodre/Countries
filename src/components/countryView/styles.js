@@ -23,6 +23,7 @@ export const Item = styled.div`
     margin-top: 10px;
     span {
         color: ${props => props.theme.colors.text};
+        margin-left: 6px;
     }
 `
 
