@@ -15,10 +15,10 @@ const CountryView = ({country}) => {
                     <Subtitle>População: </Subtitle> <span>{country.population}</span>
                 </Item>
                 <Item>
-                    <Subtitle>Region: </Subtitle> <span>{country.region}</span>
+                    <Subtitle>Região: </Subtitle> <span>{country.region}</span>
                 </Item>
                 <Item>
-                    <Subtitle>Captal: </Subtitle> <span>{country.capital}</span>
+                    <Subtitle>Capital: </Subtitle> <span>{country.capital}</span>
                 </Item>
             </Description>
         </Container>

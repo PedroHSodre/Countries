@@ -8,7 +8,7 @@ export default function MainRoute() {
     <Router>
       <Routes>
         <Route path="/" element={<AllCountries />} />
-        <Route path="/country/:id" element={<CountryDetail />} />
+        <Route path="/country" element={<CountryDetail />} />
       </Routes>
     </Router>
   );

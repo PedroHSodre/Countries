@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`    
     box-sizing: border-box;
     background-color: ${props => props.theme.colors.elements};
+    border-radius: 4px;
 
     &:hover {
         opacity: .4;
@@ -11,6 +12,7 @@ export const Container = styled.div`
 
 export const Image = styled.img`
     width: 100%;
+    border-radius: 4px 4px 0 0;
 `
 
 export const Description = styled.div`

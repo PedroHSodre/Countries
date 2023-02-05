@@ -1,13 +1,19 @@
-import React from "react";
-import BackButton from "../../components/buttons/backButton";
-import { Container, Detail, Image, Description, Text, Content } from "./styles";
-import tt from "@tomtom-international/web-sdk-maps";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const CountryDetail = ({ setCountryDetail, country }) => {
+import BackButton from "../../components/buttons/backButton";
+
+import { Container, Detail, Image, Description, Text, Content } from "./styles";
+
+const CountryDetail = () => {
+  const { state } = useLocation();
+  const [country, setCountry] = useState(state.country || {});
+
+  const navigate = useNavigate()
   return (
     <Container>
       <div>
-        <BackButton setCountryDetail={setCountryDetail} />
+        <BackButton handleClick={() => navigate(-1)} />
       </div>
       <Detail>
         <div style={{ width: "100%", maxWidth: "500px", minWidth: 250 }}>
@@ -19,29 +25,28 @@ const CountryDetail = ({ setCountryDetail, country }) => {
             <Content>
               <div>
                 <div style={{ marginTop: 20, display: "flex" }}>
-                  Native Name : <Text>{country.nativeName}</Text>
+                  Nome nativo : <Text>{country.nativeName}</Text>
                 </div>
                 <div style={{ marginTop: 20, display: "flex" }}>
-                  Population : <Text>{country.population}</Text>
+                  População : <Text>{country.population}</Text>
                 </div>
                 <div style={{ marginTop: 20, display: "flex" }}>
-                  SubRegion : <Text>{country.subregion}</Text>
+                  Região : <Text>{country.subregion}</Text>
                 </div>
                 <div style={{ marginTop: 20, display: "flex" }}>
                   Capital : <Text>{country.capital}</Text>
                 </div>
                 <div style={{ marginTop: 20, display: "flex" }}>
-                  Currencies :{" "}
+                  Moedas :{" "}
                   <Text>
-                    {country.currencies.map((curremcy) => curremcy.name)}
+                    {country.currencies.map((curremcy) => `${curremcy.name}, `)}
                   </Text>
                 </div>
                 <div style={{ marginTop: 20, display: "flex" }}>
-                  Language :{" "}
-                  <Text>{country.languages.map((lang) => `${lang.name}`)}</Text>
+                  Linguas :{" "}
+                  <Text>{country.languages.map((lang) => `${lang.name}, `)}</Text>
                 </div>
               </div>
-              <div>Maps</div>
             </Content>
           </Description>
         </div>

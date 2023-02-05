@@ -1,11 +1,11 @@
 import React from "react";
 import { Button } from "../globalButtonStyle";
 
-const BackButton = ({setCountryDetail}) => {
+const BackButton = ({handleClick}) => {
 
     return (
-        <Button onClick={() => setCountryDetail({})}>
-            Back
+        <Button onClick={() => handleClick()}>
+            Voltar
         </Button>
     )
 };
